@@ -2,8 +2,8 @@ import httpStatus from 'http-status';
 import config from '../../config';
 import { TLoginUser } from './auth.interface';
 import { createToken } from './auth.utils';
-import { User } from '../User/user.model';
 import AppError from '../../errors/AppError';
+import { User } from '../USER/user.model';
 
 const loginUser = async (payload: TLoginUser) => {
   // checking if the user is exist

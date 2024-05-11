@@ -3,9 +3,9 @@ import httpStatus from 'http-status';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import config from '../config';
 import AppError from '../errors/AppError';
-import { TUserRole } from '../modules/User/user.interface';
-import { User } from '../modules/User/user.model';
 import catchAsync from '../utils/catchAsync';
+import { TUserRole } from '../modules/USER/user.interface';
+import { User } from '../modules/USER/user.model';
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -25,11 +25,11 @@ const auth = (...requiredRoles: TUserRole[]) => {
     const { role, userId, iat } = decoded;
 
     // checking if the user is exist
-    const user = await User.isUserExistsByCustomId(userId);
+    // const user = await User.isUserExistsByCustomId(userId);
 
-    if (!user) {
-      throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
-    }
+    // if (!user) {
+    //   throw new AppError(httpStatus.NOT_FOUND, 'This user is not found !');
+    // }
     // checking if the user is already deleted
 
     // const isDeleted = user?.isDeleted;
