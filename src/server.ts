@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
-import config from './app/config';
-import { Server } from 'http';
-import app from './app';
+import mongoose from "mongoose";
+import config from "./app/config";
+import { Server } from "http";
+import app from "./app";
 
 const port = config.port;
 
@@ -19,8 +19,8 @@ async function dbConnection() {
 }
 dbConnection();
 
-process.on('uncaughtException', () => {
-  console.log('uncaughtException detected, server closed');
+process.on("uncaughtException", () => {
+  console.log("uncaughtException detected, server closed");
   if (server) {
     server.close(() => {
       process.exit(1);
@@ -28,8 +28,8 @@ process.on('uncaughtException', () => {
   }
 });
 
-process.on('unhandledRejection', () => {
-  console.log('unhandledRejection detected, server closed');
+process.on("unhandledRejection", () => {
+  console.log("unhandledRejection detected, server closed");
   if (server) {
     server.close(() => {
       process.exit(1);

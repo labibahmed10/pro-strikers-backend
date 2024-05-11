@@ -1,4 +1,4 @@
-import { AdminModel } from './admin.model';
+import { AdminModel } from "./admin.model";
 
 const getAllAdminsFromDB = async () => {
   const result = await AdminModel.find({});

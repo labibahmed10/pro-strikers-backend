@@ -1,17 +1,17 @@
-import { Schema, model } from 'mongoose';
-import { AdminMethods, TAdmin } from './admin.interface';
+import { Schema, model } from "mongoose";
+import { AdminMethods, TAdmin } from "./admin.interface";
 
 const adminSchema = new Schema<TAdmin, AdminMethods>(
   {
     user: {
       type: Schema.Types.ObjectId,
-      required: [true, 'User id is required'],
+      required: [true, "User id is required"],
       unique: true,
-      ref: 'User',
+      ref: "User",
     },
     email: {
       type: String,
-      required: [true, 'Email is required'],
+      required: [true, "Email is required"],
       unique: true,
     },
   },
@@ -34,4 +34,4 @@ adminSchema.statics.isUserExists = async function (email: string) {
   return existingUser;
 };
 
-export const AdminModel = model<TAdmin, AdminMethods>('Admin', adminSchema);
+export const AdminModel = model<TAdmin, AdminMethods>("Admin", adminSchema);

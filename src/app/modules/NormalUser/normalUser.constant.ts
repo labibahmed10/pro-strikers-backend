@@ -1,1 +1,1 @@
-export const NormalUserSearchableFields = ['email'];
+export const NormalUserSearchableFields = ["email"];

@@ -1,12 +1,12 @@
-import httpStatus from 'http-status';
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
-import { NormalUserServices } from './normalUser.service';
+import httpStatus from "http-status";
+import catchAsync from "../../utils/catchAsync";
+import sendResponse from "../../utils/sendResponse";
+import { NormalUserServices } from "./normalUser.service";
 
 const getAllNormalUsers = catchAsync(async (req, res) => {
   const result = await NormalUserServices.getAllNormalUsersFromDB();
 
-  sendResponse(res, httpStatus.OK, 'Users are retrieved succesfully', result);
+  sendResponse(res, httpStatus.OK, "Users are retrieved succesfully", result);
 });
 
 const getSingleNormalUser = catchAsync(async (req, res) => {
@@ -16,7 +16,7 @@ const getSingleNormalUser = catchAsync(async (req, res) => {
   sendResponse(
     res,
     httpStatus.OK,
-    'Single User is retrieved succesfully',
+    "Single User is retrieved succesfully",
     result,
   );
 });

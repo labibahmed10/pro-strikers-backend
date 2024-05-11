@@ -1,17 +1,17 @@
-import { Schema, model } from 'mongoose';
-import { NormalUserMethods, TNormalUser } from './normalUser.interface';
+import { Schema, model } from "mongoose";
+import { NormalUserMethods, TNormalUser } from "./normalUser.interface";
 
 const normalUserSchema = new Schema<TNormalUser, NormalUserMethods>(
   {
     user: {
       type: Schema.Types.ObjectId,
-      required: [true, 'User id is required'],
+      required: [true, "User id is required"],
       unique: true,
-      ref: 'User',
+      ref: "User",
     },
     email: {
       type: String,
-      required: [true, 'Email is required'],
+      required: [true, "Email is required"],
       unique: true,
     },
   },
@@ -30,6 +30,6 @@ normalUserSchema.statics.isUserExists = async function (email: string) {
 };
 
 export const NormalUserModel = model<TNormalUser, NormalUserMethods>(
-  'normalUser',
+  "normalUser",
   normalUserSchema,
 );

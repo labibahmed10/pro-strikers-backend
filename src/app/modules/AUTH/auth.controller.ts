@@ -1,7 +1,7 @@
-import httpStatus from 'http-status';
-import { AuthServices } from './auth.service';
-import catchAsync from '../../utils/catchAsync';
-import sendResponse from '../../utils/sendResponse';
+import httpStatus from "http-status";
+import { AuthServices } from "./auth.service";
+import catchAsync from "../../utils/catchAsync";
+import sendResponse from "../../utils/sendResponse";
 
 const loginUser = catchAsync(async (req, res) => {
   const result = await AuthServices.loginUser(req.body);
@@ -15,7 +15,7 @@ const loginUser = catchAsync(async (req, res) => {
   //   maxAge: 1000 * 60 * 60 * 24 * 365,
   // });
 
-  sendResponse(res, httpStatus.OK, 'User is logged in successfully!', result);
+  sendResponse(res, httpStatus.OK, "User is logged in successfully!", result);
 });
 
 // const changePassword = catchAsync(async (req, res) => {

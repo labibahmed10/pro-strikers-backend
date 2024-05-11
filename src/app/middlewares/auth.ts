@@ -1,11 +1,11 @@
-import { NextFunction, Request, Response } from 'express';
-import httpStatus from 'http-status';
-import jwt, { JwtPayload } from 'jsonwebtoken';
-import config from '../config';
-import AppError from '../errors/AppError';
-import catchAsync from '../utils/catchAsync';
-import { TUserRole } from '../modules/USER/user.interface';
-import { User } from '../modules/USER/user.model';
+import { NextFunction, Request, Response } from "express";
+import httpStatus from "http-status";
+import jwt, { JwtPayload } from "jsonwebtoken";
+import config from "../config";
+import AppError from "../errors/AppError";
+import catchAsync from "../utils/catchAsync";
+import { TUserRole } from "../modules/USER/user.interface";
+import { User } from "../modules/USER/user.model";
 
 const auth = (...requiredRoles: TUserRole[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
@@ -13,7 +13,7 @@ const auth = (...requiredRoles: TUserRole[]) => {
 
     // checking if the token is missing
     if (!token) {
-      throw new AppError(httpStatus.UNAUTHORIZED, 'You are not authorized!');
+      throw new AppError(httpStatus.UNAUTHORIZED, "You are not authorized!");
     }
 
     // checking if the given token is valid

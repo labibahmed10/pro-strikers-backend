@@ -1,4 +1,4 @@
-import { NormalUserModel } from './normalUser.model';
+import { NormalUserModel } from "./normalUser.model";
 
 const getAllNormalUsersFromDB = async () => {
   const result = await NormalUserModel.find({});
